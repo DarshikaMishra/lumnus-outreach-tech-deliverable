@@ -1,0 +1,15 @@
+{
+  "organization": "Lumnus Consulting, a student consulting organization at UC San Diego",
+  "advertisedServices": [
+    "Data and business analytics, visualization, business intelligence, data strategy, and website development",
+    "Market research, consumer surveys, competitive intelligence, pricing, growth, and marketing strategy"
+  ],
+  "pastProjects": {
+    "ASL Flurry": "Reorganized Google Drive infrastructure and developed a comprehensive SOP manual.",
+    "Estin & Co": "Studied the U.S. radar feedback sign market, quantified market size, researched procurement trends, and interviewed buyers.",
+    "Digital Pool": "Conducted competitor and channel research, developed customer personas, and made marketing recommendations.",
+    "Medcrypt": "Designed and deployed surveys of medical device manufacturers and monitored responses for a reputation assessment.",
+    "Wild Genomics": "Conducted market research and customer-validation surveys for product-market fit.",
+    "Maranova": "Conducted industry research and cost benchmarking for marine restoration initiatives."
+  }
+}

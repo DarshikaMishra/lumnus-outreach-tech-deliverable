@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "opportunities": {
+      "minItems": 3,
+      "maxItems": 3,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "team": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "teamBasis": {
+            "type": "string",
+            "enum": [
+              "publicly_named",
+              "inferred"
+            ]
+          },
+          "project": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "pilot": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "evidence": {
+            "minItems": 1,
+            "maxItems": 8,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "fact": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500,
+                  "description": "Specific factual claim supported by the page"
+                },
+                "retrieval": {
+                  "type": "string",
+                  "enum": [
+                    "reported_retrieved",
+                    "unavailable",
+                    "not_checked"
+                  ]
+                },
+                "excerpt": {
+                  "type": "string",
+                  "maxLength": 600,
+                  "description": "Short supporting excerpt, or empty if unavailable"
+                }
+              },
+              "required": [
+                "url",
+                "fact",
+                "retrieval",
+                "excerpt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "hypothesis": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "verificationNotes": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "benefit": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "access": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "recipientRole": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "scores": {
+            "type": "object",
+            "properties": {
+              "evidence": {
+                "type": "object",
+                "properties": {
+                  "score": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "required": [
+                  "score",
+                  "reason"
+                ],
+                "additionalProperties": false
+              },
+              "feasibility": {
+                "type": "object",
+                "properties": {
+                  "score": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "required": [
+                  "score",
+                  "reason"
+                ],
+                "additionalProperties": false
+              },
+              "value": {
+                "type": "object",
+                "properties": {
+                  "score": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "required": [
+                  "score",
+                  "reason"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "evidence",
+              "feasibility",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "rankReason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "draft": {
+            "type": "object",
+            "properties": {
+              "subject": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 5000
+              }
+            },
+            "required": [
+              "subject",
+              "body"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "team",
+          "teamBasis",
+          "project",
+          "pilot",
+          "evidence",
+          "hypothesis",
+          "verificationNotes",
+          "benefit",
+          "access",
+          "recipientRole",
+          "scores",
+          "rank",
+          "rankReason",
+          "draft"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "opportunities"
+  ],
+  "additionalProperties": false
+}
